@@ -33,14 +33,16 @@ def calcDivisaoPi(valor):
     return math.pi / valor;
 
 #funcao para calcular log de 7 a N
-#def calcLog7(valor):
-    # return 
+def calcLog7(valor):
+    return math.log(valor) / math.log(7);
+
 #funcao para calcular log de e
-# def calcLogE():
+def calcLogE(valor):
+    return math.log(valor) / math.log(math.e);
 
 #funcao apra calculcar log de pi
-# def calcLogPi():
-
+def calcLogPi(valor):
+    return math.log(valor) / math.log(math.pi);
 
 def processaValor():
     valor  = float(input());
@@ -52,7 +54,10 @@ def processaValor():
     raiz_n = calcRaizN(valor);
     multiplicacao = calcMultiplicacao(valor);
     divisao = calcDivisaoPi(valor);
+    log_7 = calcLog7(valor);
+    log_e = calcLogE(valor);
+    log_pi = calcLogPi(valor);
 
-    print(divisao);
+    print(f'i) {potencia}\nii) {potencia_n}\niii) {raiz_quadrada}\niv) {raiz_cubica}\nv) {raiz_n}\nvi) {multiplicacao}\nvii) {divisao}\nviii) {log_7}\nix) {log_e}\nx) {log_pi}');
 
 processaValor();
