@@ -25,23 +25,32 @@ def calcQtdLitros(area):
 
 def calcQtdLatas(area):
     qtd_litros = calcQtdLitros(area);
-    qtd_lata_grande = qtd_litros / LATA_GRANDE_LTS;
-    qtd_lata_pequena = qtd_litros / LATA_PEQUENA_LTS;
-    return [math.ceil(qtd_lata_grande), math.ceil(qtd_lata_pequena)];
+
+    qtd_lata_grande = math.ceil(qtd_litros / LATA_GRANDE_LTS);
+    qtd_lata_pequena = math.ceil(qtd_litros / LATA_PEQUENA_LTS);
+    resto_grade = math.floor(qtd_litros / LATA_GRANDE_LTS);
+    resto_pequena = math.ceil((qtd_litros % LATA_GRANDE_LTS) / LATA_PEQUENA_LTS);
+
+    return [qtd_lata_grande, qtd_lata_pequena, resto_grade, resto_pequena];
 
 def calcValorFinal(area):
     qtdLatas = calcQtdLatas(area);
     valorLtsGrade = qtdLatas[0] * PRECO_LTS_GRANDE;
     valorLtsPequena = qtdLatas[1] * PRECO_LTS_PEQUENA;
+    valorLtsRestoGrande = qtdLatas[2] * PRECO_LTS_GRANDE;
+    valorLtsRestoPequena = qtdLatas[3] * PRECO_LTS_PEQUENA;
     a = [qtdLatas[0], math.floor(valorLtsGrade)];
     b = [qtdLatas[1], math.floor(valorLtsPequena)];
-    return [a, b];
+    c = [qtdLatas[2], math.floor(valorLtsRestoGrande)];
+    c2 = [qtdLatas[3], math.floor(valorLtsRestoPequena)];
+    return [a, b, c, c2];
 
 def processaValor():
     area = float(input());
     valor_final = calcValorFinal(area);
-    print('a) latas(s) {0} de 24 litros: R$ {1:.2f}'.format(valor_final[0][0], valor_final[0][1]));
-    print('b) latas(s) {0} de 5.4 litros: R$ {1:.2f}'.format(valor_final[1][0], valor_final[1][1]));
-    # FALTA A C
+    print('a) {0} latas(s) de 24 litros: R$ {1:.2f}'.format(valor_final[0][0], valor_final[0][1]));
+    print('b) {0} latas(s) de 5.4 litros: R$ {1:.2f}'.format(valor_final[1][0], valor_final[1][1]));
+    print('c) {0} latas(s) de 24 litros e {1} lata(s) de 5.4 litros: R$ {2:.2f}'.format(valor_final[2][0], valor_final[3][0], (valor_final[2][1] + valor_final[3][1])));
+
 processaValor()
 
