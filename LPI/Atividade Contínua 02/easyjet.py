@@ -9,9 +9,9 @@ ALTURA = 25;
 
 def checkDimensoesMala(dimensoes):
     if dimensoes[0] <= LARGURA and dimensoes[1] <= COMPRIMENTO and dimensoes[2] <= ALTURA:
-        return print(MENSAGEM_PERMITIDA);
+        print(MENSAGEM_PERMITIDA);
     else :
-        return print(MENSAGEM_PROIBIDA);
+        print(MENSAGEM_PROIBIDA);
 
 def recebeValores():
     dimensoes = [];
