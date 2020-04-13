@@ -29,15 +29,15 @@ def init():
     mensagem = "";
 
     if frequenciaFinal < 75:
-        print('Frequencia: {0}%\nMedia Final: {1:.1f}\nAluno reprovado por faltas!'.format(frequenciaFinal, mediaFinal));
+        print('Frequencia: {0:.0f}%\nMedia: {1:.1f}\nAluno reprovado por faltas!'.format(frequenciaFinal, mediaFinal));
     elif frequenciaFinal >= 75 and mediaFinal > 9:
-        print('Frequencia: {0}%\nMedia Final: {1:.1f}\nAluno aprovado com louvor!'.format(frequenciaFinal, mediaFinal));
+        print('Frequencia: {0:.0f}%\nMedia: {1:.1f}\nAluno aprovado com louvor!'.format(frequenciaFinal, mediaFinal));
     elif frequenciaFinal >= 75 and mediaFinal >= 6 and mediaFinal <= 9:
-        print('Frequencia: {0}%\nMedia Final: {1:.1f}\nAluno Aprovado!'.format(frequenciaFinal, mediaFinal));
+        print('Frequencia: {0:.0f}%\nMedia: {1:.1f}\nAluno aprovado!'.format(frequenciaFinal, mediaFinal));
     elif frequenciaFinal >= 75 and mediaFinal >= 4 and mediaFinal < 6:
-        print('Frequencia: {0}%\nMedia Final: {1:.1f}\nAluno de recuperação!'.format(frequenciaFinal, mediaFinal));
+        print('Frequencia: {0:.0f}%\nMedia: {1:.1f}\nAluno de recuperação!'.format(frequenciaFinal, mediaFinal));
     else:
-        print('Frequencia: {0}%\nMedia Final: {1:.1f}\nAluno reprovado!'.format(frequenciaFinal, mediaFinal));
+        print('Frequencia: {0:.0f}%\nMedia: {1:.1f}\nAluno reprovado!'.format(frequenciaFinal, mediaFinal));
 
 init();
 
