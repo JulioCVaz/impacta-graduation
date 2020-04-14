@@ -1,17 +1,22 @@
+# Escreva um programa em Python 3 para somar os n primeiros termos da seguinte série:
 
-from fractions import Fraction
+# DICA: Aqui todas as frações são somadas, mas como calcular o denominador? Tente primeiro fazer a exibição apenas dos denominadores.
+
+# Os denominaores são: 1, 4, 9, 16, 25, 36, .... qual a relação entre eles e a posição dos números?
+
+# Compare com a posição: 1, 2, 3, 4, 5, 6, ....
 
 n = int(input())
 impar = 1;
 denominador = 1;
 
 count = 0;
-nums = [];
+nums = 0;
 
 razao = 0;
 
 while(n):
-    nums.append(Fraction(1, denominador))
+    nums += ((1/denominador))
 
     impar += 2
     razao = denominador + impar
@@ -19,7 +24,4 @@ while(n):
     
     n -= 1;
 
-soma = sum(nums)
-result = soma.numerator / soma.denominator
-
-print(f'{result:.6f}')
+print(f'{nums:.6f}')
