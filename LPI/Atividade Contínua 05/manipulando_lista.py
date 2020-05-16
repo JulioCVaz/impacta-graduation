@@ -3,17 +3,24 @@
 
 def main():
     # recebe valores
-    values = input().split()
-    numbers = []
-    for i in values:
-        if i != ' ':
-            numbers.append(i)
+    numbers = list(map(int, input().split()))
 
-    while(True):
-        command = input()
+    while True:
+        command = input().split()
 
-        # if command == inserir
-    # controi comandos
+        if command[0] == 'inserir':
+            numbers.append(int(command[1]))
+        if command[0] == 'remover':
+            del numbers[numbers.index(int(command[1]))]
+        if command[0] == 'parcial':
+            numbers.sort()
+            print(' '.join(list(map(str, numbers))))
+        if command[0] == 'final':
+            numbers.sort()
+            print(' '.join(list(map(str, numbers))))
+            break
+
+    return
 
 
 main()
