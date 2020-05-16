@@ -7,15 +7,13 @@
 # o primeiro nome da lista é o premiado
 
 def main():
-    values = input()
-    numbers = []
-    for i in values:
-        if i.isdigit():
-            numbers.append(int(i))
+    values = input().split()
+    n = int(values[0])
+    k = int(values[1])
 
     names = []
 
-    for i in range(numbers[0]):
+    for i in range(n):
         name = input()
 
         if not name.isdigit():
@@ -23,7 +21,7 @@ def main():
                 names.append(name)
 
     names.sort()
-    print(names[numbers[1] - 1])
+    print(names[k - 1])
 
 
 main()
